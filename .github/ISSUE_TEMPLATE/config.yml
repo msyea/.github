@@ -6,3 +6,6 @@ contact_links:
   - name: GitHub Security Bug Bounty
     url: https://bounty.github.com/
     about: Please report security vulnerabilities here.
+  - name: Advanced PR
+    url: https://github.com/c6d-io/.github/compare/master...msyea-patch-1?quick_pull=1&template=pull_request_template.md&title=lol&body=lol2&labels=bug
+    about: Advanced PR
