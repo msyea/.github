@@ -1,10 +1,16 @@
 name: Octo Organization CI
 
 on:
-  push:
-    branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'Mona the Octocat'
+      home:
+        description: 'location'
+        required: false
+        default: 'The Octoverse'
 
 jobs:
   build:
@@ -15,3 +21,9 @@ jobs:
 
       - name: Run a one-line script
         run: echo Hello from Octo Organization
+
+      - name: My hello world
+        uses: msyea/actions/hello-world@master
+        with:
+          name: ${{ github.event.inputs.name }}
+          home: ${{ github.event.inputs.home }}
