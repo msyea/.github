@@ -1,0 +1,29 @@
+name: Octo Organization CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'Mona the Octocat'
+      home:
+        description: 'location'
+        required: false
+        default: 'The Octoverse'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run a one-line script
+        run: echo Hello from Octo Organization
+
+      - name: My hello world
+        uses: msyea/actions/hello-world@master
+        with:
+          name: ${{ github.event.inputs.name }}
+          home: ${{ github.event.inputs.home }}
