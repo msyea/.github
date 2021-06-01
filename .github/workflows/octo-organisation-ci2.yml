@@ -23,7 +23,7 @@ jobs:
         run: echo Hello from Octo Organization
 
       - name: My hello world
-        uses: msyea/.github/actions/hello-world@master
+        uses: notdevex/.github/actions/hello-world@master
         with:
           name: ${{ github.event.inputs.name }}
           home: ${{ github.event.inputs.home }}
